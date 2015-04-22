@@ -70,6 +70,21 @@ var map1 = MapModule.createView({
 
 
 
+var route = MapModule.createRoute({
+    width: 4,
+    color: '#f00',
+    points: [
+        {latitude:opera.latitude, longitude:opera.longitude},
+        {latitude:bridge.latitude, longitude:bridge.longitude},
+    ]
+});
+var mapview = MapModule.createView({
+    mapType: MapModule.NORMAL_TYPE,
+    region: {latitude: latitude, longitude: longitude, latitudeDelta: 0.2, longitudeDelta: 0.2},
+    annotations: [opera,bridge]
+});
+mapview.addRoute(route);
+
 
 
 win.add(map1);
